@@ -44,9 +44,10 @@ public class Annotation {
 
 		Map<String, List<Annotation>> map = new HashMap<>();
 
-		// If we switch the API back to use a start of 0, this will need to change
+		// If we switch the API back to use a start of 0, this will need to change 
+		// -> only STRING API v1 uses -1 index, STITCH API fixed it and does not have a verison number
 		int queryIndexStart = 0;
-		if (version == null || version == 1)
+		if (version != null && version == 1)
 			queryIndexStart = -1;
 
 		for (Object annObject: annotationArray) {
