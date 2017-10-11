@@ -750,8 +750,8 @@ public class ModelUtils {
 					&& current.getColumn(EnrichmentTerm.colNetworkSUID) != null
 					&& current.getAllRows().size() > 0) {
 				CyRow tempRow = current.getAllRows().get(0);
-				if (tempRow.get(EnrichmentTerm.colNetworkSUID, Long.class)
-						.equals(network.getSUID())) {
+				if (tempRow.get(EnrichmentTerm.colNetworkSUID, Long.class) != null && tempRow
+						.get(EnrichmentTerm.colNetworkSUID, Long.class).equals(network.getSUID())) {
 					netTables.add(current);
 				}
 			}
